@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.clockin.dao.IRolesDao">
+	<select id="findRolesById" parameterType="rolesBo" resultType="rolesBo"  >
+		SELECT * FROM `roles` where ID = #{id}
+	</select>
+	
+	<select id="findRolesList" parameterType="String" resultType="rolesBo"  >
+		SELECT * FROM `roles` 
+		<where>
+			<if test="_parameter != null and 2 == _parameter">
+				id != 1
+			</if>
+			<if test="_parameter != null and 3 == _parameter">
+				id = 3
+			</if>
+		</where>
+	</select>
+	
+	<select id="findRolesByPage" resultType="rolesBo">
+		select * from roles
+		<where>
+			<if test="null != param.name and '' != param.name">
+				`name` = #{param.name}
+			</if>
+		</where>
+	</select>
+	
+	<insert id="doAddSaveRoles" parameterType="rolesBo">
+		insert into `roles` (
+           `NAME`, 
+           `ROLE_STATUS`, 
+           `CREATOR_ID`, 
+           `CREATOR`, 
+           `CREATE_DATE`, 
+           `DESCRIPTION`
+		) values 
+		(
+            #{name}, 
+            #{roleStatus}, 
+            #{creatorId}, 
+            #{creator}, 
+            #{createDate}, 
+            #{description}
+		)
+		<selectKey keyProperty="id"  resultType="java.lang.Integer">
+			select last_insert_id() as id from `roles` limit 1
+		</selectKey>
+	</insert>
+	
+	<update id="doEditSaveRoles" parameterType="rolesBo">
+		update `roles` set 
+              `NAME` = #{name}, 
+              `ROLE_STATUS` = #{roleStatus}, 
+              `CREATOR_ID` = #{creatorId}, 
+              `CREATOR` = #{creator}, 
+              `CREATE_DATE` = #{createDate}, 
+              `DESCRIPTION` = #{description}
+        	where ID = #{id}
+	</update>
+	
+</mapper>

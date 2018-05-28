@@ -1,0 +1,238 @@
+/*公用样式*/
+.inlineBlock {
+    display: inline-block;
+}
+
+input, button, select {
+    outline: none;
+}
+
+.lists {
+    overflow: hidden;
+    margin: 0 10px;
+    height: 100%;
+    background-color: #fff;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.lists .buttons {
+    margin-bottom: 15px;
+}
+
+#content .rowTitle {
+    height: 52px;
+}
+
+.rowTitle h4 {
+    color: #fff;
+    height: 52px;
+    line-height: 52px;
+    margin: 0;
+    font-size: 15px;
+    background-color: #252A30;
+    padding-left: 18px;
+}
+
+.page-header {
+    font-size: 18px;
+}
+
+/*重置bootstrap样式*/
+/*按钮组样式*/
+.buttons .btn {
+    width: 107px;
+    font-size: 12px;
+    height: 34px;
+}
+
+/*.buttons .addNew {
+    background-color: red !important;
+}*/
+.btns button {
+    width: 107px;
+    font-size: 12px;
+    height: 34px;
+}
+
+/*表单组样式*/
+.formList {
+    height: 34px;
+    border-radius: 5px;
+    border: 1px solid #DCDDE1;
+}
+
+.query .form-group {
+    margin-right: 20px;
+}
+
+.query .form-group:nth-last-child(1) {
+    margin-right: 0;
+}
+
+.query .form-group input {
+    width: 120px;
+}
+
+.query .form-group #school {
+    width: 150px;
+}
+
+.query .form-group #role, #OnPosition {
+    width: 120px;
+}
+
+.query .form-group #lock {
+    width: 120px;
+}
+
+.query .form-group button[type="button"] {
+    font-size: 12px;
+    height: 34px;
+    margin-top: -4px;
+}
+
+/*dtgrid表格部分样式*/
+.tableList {
+    margin-top: 10px;
+}
+
+#dtGridContainer_2_1_2 .table > thead > tr > th {
+    font-size: 14px;
+}
+
+#dtGridContainer_2_1_2 .table > tbody > tr > td {
+    font-size: 14px;
+    color: #6E7275;
+}
+
+.form-control {
+    width: auto;
+    display: inline-block;
+}
+
+.dt-grid-container .dt-grid > tbody .dt-grid-row:nth-child(4n-1) td {
+    background-color: #e8ecf1 !important;
+}
+
+.table-hover > tbody > tr:hover td {
+    background-color: #fff !important;
+}
+
+/*模态框部分样式*/
+
+#modal-dialog .dataList {
+    margin: 15px 0;
+}
+
+#modal-dialog .dataList > tbody > tr > td {
+    height: 30px !important;
+    line-height: 30px !important;
+    font-size: 14px;
+    color: #242a30;
+}
+
+#modal-dialog .table {
+    margin-bottom: 0;
+}
+
+.modal-body {
+    padding-top: 0;
+}
+
+.modalAboutOrder {
+    border-bottom: 1px solid #e2e7eb;
+}
+
+.payMentInfo {
+    border-top: 1px solid #e2e7eb;
+    margin-top: 20px;
+}
+
+.orderState {
+    border-top: 1px solid #e2e7eb;
+}
+
+.modalAboutOrder h4 {
+    font-size: 16px;
+    height: 37px;
+    margin: 0;
+    line-height: 37px;
+}
+
+/*表单部分新添加table样式*/
+.hitToTable {
+    width: 172px;
+    position: relative;
+}
+
+.hitToTable span {
+    font-size: 28px;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    cursor: pointer;
+}
+
+.addTable {
+    position: relative;
+}
+
+.extraTable {
+    border: 2px solid #C1DBFA;
+    display: none;
+    position: absolute;
+    top: 34px;
+    z-index: 99;
+}
+.extraTable th {
+    background-color: #C1DBFA;
+}
+.extraTable td {
+    background-color: #fff;
+}
+
+.extraTable th, tr, td {
+    border: 1px solid #ccd0d4;
+    font-size: 14px;
+    padding: 5px 8px;
+    color: #000;
+}
+
+.parsley-error,.parsley-success{background: transparent!important;border-color: #CCC!important;}
+.hidden-input{display: none!important;}
+
+.nav-padding-top{
+    padding-top: 10px;
+}
+
+.text-area{
+    width: 320px;
+    height: 320px;
+}
+
+.btn-font{
+    font-size: 12px !important;
+}
+
+.panel-header{
+    cursor: move;
+    background: #252A30;;
+    padding: 10px 15px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    border: none;
+    font-weight:bold;
+    color: white;
+}
+
+.not-line{
+    display:inline-block;
+    font-weight:bold;
+    font-size:14px
+}
+
+.click-mose{
+    cursor: pointer;
+}

@@ -1,0 +1,172 @@
+/*页面内容部分*/
+body{
+    background: url("../images/login-bg.png") no-repeat;
+    background-size:cover;
+    /*background-color: orange;*/
+}
+.content{
+    width: 100%;
+    padding-top: 80px;
+}
+    /*页面上部内容部分*/
+.content .avatorMsg{
+    width: 360px;
+    margin:0 auto;
+    text-align: center;
+}
+.avatorMsg .avator{
+    width: 100%;
+}
+.avatorMsg .avator a {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 10px;
+    border:1px solid #4c51b6;
+    overflow: hidden;
+}
+.avator span{
+    display: block;
+    margin-top: 15px;
+    font-size:18px;
+    color: #fff;
+    font-family:'MicrosoftYahei',sans-serif,'MicrosoftYaheiLight';
+}
+.avatorMsg .messageBtn{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+.avatorMsg .messageBtn a{
+    display: inline-block;
+    width: 150px;
+    height: 36px;
+    background-color: #4A4DB2;
+    line-height:36px;
+    text-align: center;
+    color: #fff;
+    font-size:14px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    border-radius:20px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.messageBtn a:hover{
+    background-color:#fff;
+    color:#1c1c1c;
+}
+
+    /*页面下部内容部分*/
+.bottomIcons .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
+    padding-left: 0;
+    padding-right: 0;
+}
+.bottomIcons{
+    padding-top: 50px;
+    height: 100%;
+}
+.bottomIcons ul{
+    height: 100%;
+    /*display: flex;
+    justify-content: space-between;*/
+    text-align: center;
+}
+.bottomIcons li {
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+.bottomIcons li a {
+    display: inline-block;
+    width: 88px;
+    height: auto;
+}
+.bottomIcons li a img{
+    width: 88px;
+    height: 88px;
+}
+.bottomIcons li a span{
+    display: block;
+    color: #fff;
+    margin-top: 20px;
+    font-size:14px;
+}
+.footer{
+    width: 100%;
+    position: absolute;
+    bottom:5%;
+    /*left:50%;
+    transform:translateX(-50%);*/
+    text-align: center;
+}
+.footer p {
+    font-size:12px;
+    color: #fff;
+}
+/*最小屏幕*/
+@media screen and (max-width: 768px){
+    .avator span{
+        margin-top: -15px;
+    }
+    .content .avatorMsg{
+        width: 270px;
+    }
+    .avatorMsg .messageBtn a{
+        width: 130px;
+        height: 30px;
+        line-height:30px;
+    }
+    .avatorMsg .messageBtn{
+        width: 100%;
+        margin-top: 20px;
+    }
+    .bottomIcons{
+        padding:50px 10px 0 10px;
+    }
+    .bottomIcons ul{
+        text-align: center;
+        height: 100%;
+    }
+    .bottomIcons li a img{
+        width: 60px;
+        height: 60px;
+    }
+    .bottomIcons li a span{
+        display: block;
+        color: #fff;
+        margin-top: 10px;
+        font-size:14px;
+    }
+    .bottomIcons li a {
+        width: 60px;
+    }
+    .bottomIcons li {
+        /*padding-bottom: 50px;*/
+        margin-bottom: 30px;
+    }
+    .bottomIcons{
+        padding-top: 40px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 992px){
+
+}
+@media screen and (min-width: 992px) and (max-width: 1200px){
+
+}
+@media screen and (min-width: 1200px){
+
+}

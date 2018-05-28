@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.clockin.dao.IManagerInfoDao">
+	
+	<insert id="doSave" parameterType="managerInfoBo">
+		insert into `manager_info` (
+           `MANAGER_ID`, 
+           `SCHOOL_CODE`, 
+           `NAME`, 
+           `BIRTHDAY`, 
+           `CARD_TYPE`, 
+           `CARD_CODE`, 
+           `WECHAT`, 
+           `QQ`, 
+           `EMAIL`, 
+           `MOBILE`, 
+           `PHONE`, 
+           `IS_ONJOB`, 
+           `JOB_CATEGORY`, 
+           `ACADEMIES`, 
+           `AWARDS`, 
+           `START_WORK`, 
+           `SUMMARY`, 
+           `DETAILS`, 
+           `CREATOR`, 
+           `CREATE_TIME`, 
+           `MODIFIER`, 
+           `MODIFY_TIME`,
+           `LOGO`,
+           `GENDER`
+		) values 
+		(
+            #{managerId}, 
+            #{schoolCode}, 
+            #{name}, 
+            #{birthday}, 
+            #{cardType}, 
+            #{cardCode}, 
+            #{wechat}, 
+            #{qq}, 
+            #{email}, 
+            #{mobile}, 
+            #{phone}, 
+            #{isOnjob}, 
+            #{jobCategory}, 
+            #{academies}, 
+            #{awards}, 
+            #{startWork}, 
+            #{summary}, 
+            #{details}, 
+            #{creator}, 
+            #{createTime}, 
+            #{modifier}, 
+            #{modifyTime},
+            #{logo},
+            #{gender}
+		)
+		<selectKey keyProperty="id"  resultType="java.lang.Integer">
+			select last_insert_id() as id from `manager_info` limit 1
+		</selectKey>
+	</insert>
+	
+	<update id="doEdit" parameterType="managerInfoBo">
+		update `manager_info`
+		<set>
+			<if test="null != name  and '' != name">
+			`NAME` = #{name},
+			</if>
+			<if test="null != mobile  and '' != mobile">
+			`MOBILE` = #{mobile}, 
+			</if>
+			<if test="null != email  and '' != email">
+			`EMAIL` = #{email}, 
+			</if>
+			<if test="null != gender">
+			`GENDER` = #{gender}, 
+			</if>
+			<if test="null != wechat  and '' != wechat">
+			`WECHAT` = #{wechat}, 
+			</if>
+			<if test="null != qq  and '' != qq">
+			`QQ` = #{qq}, 
+			</if>
+			<if test="null != academies  and '' != academies">
+			`ACADEMIES` = #{academies}, 
+			</if>
+			<if test="null != awards  and '' != awards">
+			`AWARDS` = #{awards}, 
+			</if>
+			<if test="null != summary  and '' != summary">
+			`SUMMARY` = #{summary}, 
+			</if>
+			<if test="null != details  and '' != details">
+			`DETAILS` = #{details},
+			</if>
+			<if test="null != logo  and '' != logo">
+			`LOGO` = #{logo},
+			</if>
+		</set>
+       	where ID = #{id}
+	</update>
+	
+	<select id="findInfoByManagerId" parameterType="managerInfoBo" resultType="managerInfoBo">
+		select * from manager_info where manager_id=#{managerId}
+	</select>
+</mapper>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.clockin.dao.IResourcesDao">
+	
+	<select id="selectAll" resultType="resourcesBo" >
+		select * from `resources` order by `RESOURCE_ORDER`
+	</select>
+	
+	<!-- 根据编号查询资源管理信息 -->
+	<select id="findResourcesById" parameterType="int" resultType="resourcesBo">
+		select * from `resources` where ID = #{_parameter}
+	</select>
+
+	<!-- 分页查询资源管理列表 -->
+	<select id="findListByPage" resultType="resourcesBo">
+		select * from `resources` 
+		<where>
+		<if test="null != param.nameZh and '' != param.nameZh">
+			`name_zh` = #{param.nameZh}
+		</if>
+		</where>
+		order by ID desc
+	</select>
+	
+	<!-- 添加资源管理 -->
+	<insert id="doAddResources" parameterType="resourcesBo">
+		insert into `resources` (
+			`PARENT_ID`, 
+			`NAME_EN`, 
+			`NAME_ZH`, 
+			`RESOURCE_TYPE`, 
+			`ACTIONS`, 
+			`DEFAULT_URI`, 
+			`RESOURCE_STATUS`, 
+			`RESOURCE_ORDER`, 
+			`DESCRIPTION`, 
+			`CREATOR_ID`, 
+			`CREATOR`, 
+			`CREATE_DATE`
+		) values 
+		(
+			#{parentId}, 
+			#{nameEn}, 
+			#{nameZh}, 
+			#{resourceType}, 
+			#{actions}, 
+			#{defaultUri}, 
+			#{resourceStatus}, 
+			#{resourceOrder}, 
+			#{description}, 
+			#{creatorId}, 
+			#{creator}, 
+			CURRENT_TIMESTAMP()
+		)
+		<selectKey keyProperty="id"  resultType="java.lang.Integer">
+			select last_insert_id() as id from `resources` limit 1
+		</selectKey>
+	</insert>
+		
+	<!-- 编辑资源管理 -->
+	<update id="doEditResources" parameterType="resourcesBo">
+		update `resources` 
+		<set> 
+			<if test="null != parentId and '' != parentId">
+				`PARENT_ID` = #{parentId},
+			</if>
+			<if test="null != nameEn and '' != nameEn">
+				`NAME_EN` = #{nameEn},
+			</if>
+			<if test="null != nameZh and '' != nameZh">
+				`NAME_ZH` = #{nameZh},
+			</if>
+			<if test="null != resourceType and '' != resourceType">
+				`RESOURCE_TYPE` = #{resourceType},
+			</if>
+			<if test="null != actions and '' != actions">
+				`ACTIONS` = #{actions},
+			</if>
+			<if test="null != defaultUri and '' != defaultUri">
+				`DEFAULT_URI` = #{defaultUri},
+			</if>
+			<if test="null != resourceStatus and '' != resourceStatus">
+				`RESOURCE_STATUS` = #{resourceStatus},
+			</if>
+			<if test="null != resourceOrder and '' != resourceOrder">
+				`RESOURCE_ORDER` = #{resourceOrder},
+			</if>
+			<if test="null != description and '' != description">
+				`DESCRIPTION` = #{description},
+			</if>
+			<if test="null != creatorId and '' != creatorId">
+				`CREATOR_ID` = #{creatorId},
+			</if>
+			<if test="null != creator and '' != creator">
+				`CREATOR` = #{creator},
+			</if>
+		</set>
+        where ID = #{id}
+	</update>
+	
+	<!-- 根据编号删除资源管理 -->
+	<delete id="doDelResources" parameterType="int">
+		delete from `resources` where ID = #{_parameter}
+	</delete>
+	
+</mapper>

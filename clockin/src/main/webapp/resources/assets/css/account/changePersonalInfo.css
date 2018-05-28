@@ -1,0 +1,451 @@
+body{
+    color:#111;
+}
+header{
+    background: url("../../images/bg.png") no-repeat;
+}
+header .navBar{
+    /*height: 150px;*/
+    height: 100%;
+    width: 70%;
+}
+.content{
+    width: 100%;
+    height: 100%;
+    /*background-color: orange;*/
+}
+.content .msgTitle h4{
+    height: 78px;
+    border-bottom:1px solid #d2d2d2;
+    line-height:90px;
+    font-size:16px;
+}
+.content .avatorMsg{
+    height: 100%;
+    /*background-color: green;*/
+    text-align: center;
+    margin-top: 50px;
+    margin-left:50px;
+}
+.avatorMsg .avator{
+    display: inline-block;
+    width: 130px;
+    height: 130px;
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    border-radius:50%;
+    line-height:157px;
+    text-align: center;
+}
+.avatorMsg .avator img{
+    width: 100%;
+    height: 100%;
+}
+.avatorMsg p{
+    font-size:20px;
+    font-weight:100;
+    margin-top: 22px;
+}
+.avatorMsg button {
+    width: 172px;
+    height: 36px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    background-color: #4A4DB1;
+    font-size:14px;
+    margin-top: 20px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.avatorMsg button:hover{
+    background-color: #FF4D28;
+}
+.avatorMsg button a {
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    line-height:36px;
+}
+/*.avatorMsg button:hover{
+    background-color: #fff;
+    color: #1c1c1c;
+}*/
+.content .msgDetail{
+    height: 100%;
+    margin-top: 50px;
+}
+.msgDetail .form-group{
+    margin-bottom: 37px;
+    clear: both;
+}
+.msgDetail .form-group label{
+    margin-bottom: 0;
+    font-weight:100;
+}
+textarea:focus{
+    outline-offset: 0;
+}
+[placeholder] { font-family: 'MicrosoftYaheiLight'; }
+::-moz-placeholder {
+    color: #868686;
+}
+:-ms-input-placeholder {
+    color: #868686;
+}
+::-webkit-input-placeholder {
+    color: #868686;
+}
+select {
+appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    background: url("../images/Bitmap@3x.png") no-repeat scroll 95% 50% transparent;
+    background-size:14px 8px;
+}
+input[type='password'] {
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+}
+.msgDetail .form-group{
+    overflow: hidden;
+    text-align: right;
+}
+.msgDetail .form-group label{
+    font-size:14px;
+    color: #111;
+    margin-right: 26px;
+    margin-bottom: 0;
+    max-width:none;
+    font-weight:100;
+    vertical-align: middle;
+}
+.msgDetail .form-group input,textarea,select{
+    width: 494px;
+    border:1px solid #d2d2d2;
+    /*color: #868686;*/
+    color:#111;
+    font-size:12px;
+    display: inline-block;
+    resize: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+.msgDetail .form-group textarea{
+    padding-top: 14px;
+    vertical-align: text-top;
+}
+.msgDetail .gender select{
+    height: 48px;
+    padding-left: 19px;
+}
+.msgDetail .graduateFrom input{
+    height: 48px;
+    padding-left: 19px;
+}
+.msgDetail .schoolName input{
+    height: 48px;
+    padding-left: 19px;
+}
+.msgDetail .name input{
+    height: 48px;
+    padding-left: 19px;
+}
+.msgDetail .birthday input{
+    height: 48px;
+    padding-left: 19px;
+}
+.msgDetail .cardType select{
+	height: 48px;
+	padding-left: 19px;
+}
+.msgDetail .cardCode input{
+	height: 48px;
+	padding-left: 19px;
+}
+.msgDetail .wechat input{
+	height: 48px;
+	padding-left: 19px;
+}
+.msgDetail .qq input{
+	height: 48px;
+	padding-left: 19px;
+}
+.msgDetail .email input{
+	height: 48px;
+	padding-left: 19px;
+}
+.msgDetail .mobile input{
+	height: 48px;
+	padding-left: 19px;
+}
+.msgDetail .phone input{
+	height: 48px;
+	padding-left:19px;
+}
+.msgDetail .isOnjob select{
+    height: 48px;
+    padding-left: 19px;
+}
+.msgDetail .jobCategory select{
+    height: 48px;
+    padding-left: 19px;
+}
+.msgDetail .academies input{
+	height: 48px;
+	padding-left: 19px;
+}
+.msgDetail .awards textarea{
+	height: 179px;
+	padding-left: 19px;
+}
+.msgDetail .awards label{
+    vertical-align: text-top;
+    margin-top: 14px;
+}
+.msgDetail .startWork select{
+	height: 48px;
+	padding-left: 19px;
+}
+.msgDetail .summary textarea{
+	height: 179px;
+	padding-left: 19px;
+}
+.msgDetail .summary label{
+    vertical-align: text-top;
+    margin-top: 14px;
+}
+.msgDetail .details textarea{
+	height: 179px;
+	padding-left: 19px;
+}
+.msgDetail .details label{
+    vertical-align: text-top;
+    margin-top: 14px;
+}
+
+
+.msgDetail .checkbox{
+    margin-top: 59px;
+    margin-bottom: 142px;
+}
+.msgDetail .checkbox button{
+    width: 172px;
+    height: 36px;
+    border-radius: 20px;
+    font-size:14px;
+}
+.msgDetail .checkbox .h-save {
+    background-color: #FF4D28;
+    color: #fff;
+    
+}
+.msgDetail .checkbox .h-cancle {
+    background-color: #F5F5F5;
+    margin-left: 35px;
+    color: #111;
+}
+@media screen and (min-width: 1200px){
+    .msgDetail .checkbox{
+        text-align: right;
+        margin-top: 50px;
+    }
+    .msgDetail .checkbox button:last-child{
+        background-color: #F5F5F5;
+        margin-left: 35px;
+        margin-right: 50px;
+        color: #111;
+    }
+    /*.content .msgDetail form{
+        margin-right: 30px;
+    }*/
+
+}
+@media screen and (min-width: 992px) and (max-width: 1200px){
+    .content .avatorMsg{
+        margin-left:60px;
+    }
+    .msgDetail .form-group{
+        text-align: left;
+    }
+    .msgDetail .form-group label{
+        margin-bottom: 10px;
+    }
+    .msgDetail .checkbox{
+        margin-top: 50px;
+        width: 494px;
+        text-align: center;
+    }
+
+}
+@media screen and (min-width: 768px) and (max-width: 992px){
+    .content .avatorMsg{
+        margin-left:0;
+    }
+    .msgDetail .form-group{
+        text-align: right;
+    }
+    .msgDetail .checkbox{
+        width: 494px;
+        margin-top: 40px;
+        text-align: right;
+        /*display: flex;
+        align-items: center;
+        justify-content: space-around;*/
+    }
+    .msgDetail .checkbox button:last-child{
+        margin-left: 0;
+    }
+    .msgDetail .form-group label{
+        margin-bottom: 10px;
+    }
+    .content .msgTitle h4{
+        height: 60px;
+        line-height:65px;
+    }
+    .content .avatorMsg{
+        height: 100%;
+        /*background-color: green;*/
+        text-align: center;
+        margin-top: 10px;
+    }
+    select {
+        background: url("../images/Bitmap@2x.png") no-repeat scroll  95% 50%  transparent;
+        background-size:14px 8px;
+    }
+}
+@media screen and (max-width: 768px){
+    select {
+        background: url("../images/Bitmap.png") no-repeat scroll 95% 50%  transparent;
+    }
+    .content .avatorMsg{
+        margin-left:0;
+    }
+    .msgDetail{
+        text-align: center;
+    }
+    .msgDetail .form-group{
+        text-align: left;
+        display: inline-block;
+        width: 100%;
+    }
+    .msgDetail .form-group input,textarea,select{
+        width: 100%;
+    }
+    .msgDetail .checkbox{
+        display: inline-block;
+        width: 100%;
+        margin-top: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .msgDetail .checkbox button:last-child{
+        margin-left: 0;
+    }
+    .msgDetail .form-group label{
+        margin-bottom: 5px;
+        margin-top: 15px;
+    }
+    .content .msgTitle h4{
+        height: 60px;
+        line-height:65px;
+    }
+    .content .avatorMsg{
+        height: 100%;
+        /*background-color: green;*/
+        text-align: center;
+        margin-top: 10px;
+    }
+    /*婵絽绻掔划宄無rm-group闁汇劌瀚板Λ璺ㄦ崉閿燂拷*/
+    .msgDetail .form-group{
+        margin-bottom: 0px;
+    }
+    .msgDetail .reward label{
+        margin-top: 10px;
+    }
+    .msgDetail .briefIntroduction label{
+        margin-top: 10px;
+    }
+    .msgDetail .moreIntroduction label{
+        margin-top: 10px;
+    }
+    .content .msgDetail{
+        margin-top: 15px;
+    }
+    .msgDetail .checkbox button{
+        /*width: 225px;
+        height: 48px;*/
+        width: 130px;
+        height: 35px;
+        border-radius: 20px;
+        font-size:14px;
+    }
+    .msgDetail .form-group textarea{
+        padding-top: 5px;
+    }
+    .msgDetail .gender select{
+	    padding-top: 5px;
+	}
+	.msgDetail .graduateFrom input{
+	    padding-top: 5px;
+	}
+	.msgDetail .schoolName input{
+	    padding-top: 5px;
+	}
+	.msgDetail .name input{
+	    padding-top: 5px;
+	}
+	.msgDetail .birthday input{
+	    padding-top: 5px;
+	}
+	.msgDetail .cardType select{
+		padding-top: 5px;
+	}
+	.msgDetail .cardCode input{
+		padding-top: 5px;
+	}
+	.msgDetail .wechat input{
+		padding-top: 5px;
+	}
+	.msgDetail .qq input{
+		padding-top: 5px;
+	}
+	.msgDetail .email input{
+		padding-top: 5px;
+	}
+	.msgDetail .mobile input{
+		padding-top: 5px;
+	}
+	.msgDetail .phone input{
+		padding-top: 5px;
+	}
+	.msgDetail .isOnjob select{
+	    padding-top: 5px;
+	}
+	.msgDetail .jobCategory select{
+	    padding-top: 5px;
+	}
+	.msgDetail .academies input{
+		padding-top: 5px;
+	}
+	.msgDetail .awards textarea{
+		padding-top: 5px;
+	}
+	.msgDetail .startWork select{
+		padding-top: 5px;
+	}
+	.msgDetail .summary textarea{
+		padding-top: 5px;
+	}
+	.msgDetail .details textarea{
+		padding-top: 5px;
+	}
+
+}

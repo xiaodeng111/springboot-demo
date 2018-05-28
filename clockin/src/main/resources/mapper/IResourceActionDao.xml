@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.clockin.dao.IResourceActionDao">
+	
+	<select id="selectAll" resultType="resourceActionBo" >
+		select * from `resource_action`
+	</select>
+	
+	<select id="findMaxBit" resultType="Integer" >
+		select max(bit) from `resource_action`
+	</select>
+	
+	<!-- 根据编号查询资源动作信息 -->
+	<select id="findResourceActionById" parameterType="int" resultType="resourceActionBo">
+		select * from `resource_action` where ID = #{_parameter}
+	</select>
+
+	<!-- 分页查询资源动作列表 -->
+	<select id="findListByPage" resultType="resourceActionBo">
+		select * from `resource_action` 
+		<where>
+		<if test="null != param.nameZh and '' != param.nameZh">
+			`name_zh` = #{param.nameZh}
+		</if>
+		</where>
+		order by ID desc
+	</select>
+	
+	<!-- 添加资源动作 -->
+	<insert id="doAddResourceAction" parameterType="resourceActionBo">
+		insert into `resource_action` (
+			`NAME_ZH`, 
+			`NAME_EN`, 
+			`BIT`, 
+			`ACTION_STATUS`, 
+			`CREATOR_ID`, 
+			`CREATOR`, 
+			`CREATE_DATE`, 
+			`DESCRIPTION`
+		) values 
+		(
+			#{nameZh}, 
+			#{nameEn}, 
+			#{bit}, 
+			#{actionStatus}, 
+			#{creatorId}, 
+			#{creator}, 
+			CURRENT_TIMESTAMP(), 
+			#{description}
+		)
+		<selectKey keyProperty="id"  resultType="java.lang.Integer">
+			select last_insert_id() as id from `resource_action` limit 1
+		</selectKey>
+	</insert>
+		
+	<!-- 编辑资源动作 -->
+	<update id="doEditResourceAction" parameterType="resourceActionBo">
+		update `resource_action` 
+		<set> 
+			<if test="null != nameZh and '' != nameZh">
+				`NAME_ZH` = #{nameZh},
+			</if>
+			<if test="null != nameEn and '' != nameEn">
+				`NAME_EN` = #{nameEn},
+			</if>
+			<if test="null != bit and '' != bit">
+				`BIT` = #{bit},
+			</if>
+			<if test="null != actionStatus and '' != actionStatus">
+				`ACTION_STATUS` = #{actionStatus},
+			</if>
+			<if test="null != creatorId and '' != creatorId">
+				`CREATOR_ID` = #{creatorId},
+			</if>
+			<if test="null != creator and '' != creator">
+				`CREATOR` = #{creator},
+			</if>
+			<if test="null != description and '' != description">
+				`DESCRIPTION` = #{description},
+			</if>
+		</set>
+        where ID = #{id}
+	</update>
+	
+	<!-- 根据编号删除资源动作 -->
+	<delete id="doDelResourceAction" parameterType="int">
+		delete from `resource_action` where ID = #{_parameter}
+	</delete>
+	
+</mapper>

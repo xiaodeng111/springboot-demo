@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.demo.clockin.dao.IManagerDao">
+	<select id="findManagerByPage" resultType="managerBo">
+		SELECT * FROM manager 
+		<where>
+			<if test ="param.schoolCode != null and param.schoolCode != ''">
+			    and `SCHOOL_CODE` = #{param.schoolCode}
+		    </if>
+		</where>
+		ORDER BY id DESC
+	</select>
+	<!-- 登录系统 -->
+	<select id="findManager4Login" parameterType="managerBo" resultType="managerVo">
+		SELECT
+			m.id id,
+			m.is_lock,
+			m.is_onjob,
+			m.login_name,
+			m.school_code,
+			m.role_id,
+			mi.email,
+			mi.gender,
+			mi.logo,
+			mi.mobile,
+			mi.name,
+			m.nickname
+		from manager m 
+		left JOIN manager_info mi on m.id = mi.manager_id
+		where m.login_name=#{loginName} 
+			and m.password=#{password} limit 1
+	</select>
+	<!-- 列表 -->
+	<select id="findManagerListByPage" resultType="managerVo">
+		select
+				m.id,
+				m.school_code,
+				m.nickname,
+				m.login_name,
+				m.password,
+				m.role_id,
+				m.is_onjob,
+				m.is_lock,
+				m.creator,
+				m.create_time,
+				m.last_login_time,
+				m.last_login_ip,
+				m.email,
+				mi.name as name,
+				mi.gender as gender
+			from manager m 
+			left join manager_info mi on m.id = mi.manager_id
+			<where>
+		        <if test ="param.loginName != null and param.loginName != ''">
+				    and m.login_name like concat('%',#{param.loginName},'%')
+			    </if>
+			    <if test ="param.roleId != null and param.roleId > -1">
+					and m.role_id = #{param.roleId}
+				</if>
+	            <if test ="param.isOnjob != null and param.isOnjob > -1">
+					and m.is_onjob = #{param.isOnjob}
+				</if>
+	            <if test ="param.isLock != null and param.isLock > -1">
+					and m.is_lock = #{param.isLock}
+				</if>
+			</where>
+			ORDER BY m.id desc
+	</select>
+	<!-- 修改登录时间 -->
+	<update id="doSetLoginTime" parameterType="managerBo">
+		UPDATE manager SET last_login_ip = #{lastLoginIp}, last_login_time = #{lastLoginTime} WHERE id = #{id}
+	</update>
+	<!-- 修改密码 -->
+	<update id="doResetPassword" parameterType="managerBo">
+		UPDATE manager SET password = #{password} WHERE id = #{id}
+	</update>
+	
+	<!-- 根据编号查询账号管理信息 -->
+	<select id="findManagerById" parameterType="int" resultType="managerVo">
+		<!-- select * from `manager` where ID = #{_parameter} -->
+		select
+			m.id,
+			m.school_code,
+			m.nickname,
+			m.login_name,
+			m.password,
+			m.role_id,
+			m.is_onjob,
+			m.is_lock,
+			m.creator,
+			m.create_time,
+			m.last_login_time,
+			m.last_login_ip,
+			m.email,
+			mi.name as name,
+			mi.gender as gender
+		from manager m 
+		left join manager_info mi on m.id = mi.manager_id where m.id = #{id}
+	</select>
+
+	<!-- 分页查询账号管理列表 -->
+	<select id="findListByPage" resultType="managerBo">
+		select * from `manager` 
+		<where>
+		<if test="null != param.schoolCode and '' != param.schoolCode">
+			and `school_code` = #{param.schoolCode}
+		</if>
+		<if test="null != param.loginName and '' != param.loginName">
+			and `login_name` = #{param.loginName}
+		</if>
+		</where>
+		order by ID desc
+	</select>
+	
+	<!-- 添加账号管理 -->
+	<insert id="doAddManager" parameterType="managerBo">
+		insert into `manager` (
+			`SCHOOL_CODE`, 
+			`LOGIN_NAME`, 
+			`PASSWORD`, 
+			`EMAIL`, 
+			`IS_ONJOB`, 
+			`IS_LOCK`, 
+			`CREATOR`, 
+			`CREATE_TIME`, 
+			`LAST_LOGIN_TIME`, 
+			`LAST_LOGIN_IP`, 
+			`ROLE_ID`, 
+			`NICKNAME`, 
+			`MODIFIER`, 
+			`MODIFY_TIME`
+		) values 
+		(
+			#{schoolCode}, 
+			#{loginName}, 
+			#{password}, 
+			#{email}, 
+			#{isOnjob}, 
+			#{isLock}, 
+			#{creator}, 
+			CURRENT_TIMESTAMP(), 
+			CURRENT_TIMESTAMP(), 
+			#{lastLoginIp}, 
+			#{roleId}, 
+			#{nickname}, 
+			#{modifier}, 
+			CURRENT_TIMESTAMP()
+		)
+		<selectKey keyProperty="id"  resultType="java.lang.Integer">
+			select last_insert_id() as id from `manager` limit 1
+		</selectKey>
+	</insert>
+		
+	<!-- 编辑账号管理 -->
+	<update id="doEditManager" parameterType="managerBo">
+		update `manager` 
+		<set> 
+			<if test="null != schoolCode and '' != schoolCode">
+				`SCHOOL_CODE` = #{schoolCode},
+			</if>
+			<if test="null != loginName and '' != loginName">
+				`LOGIN_NAME` = #{loginName},
+			</if>
+			<if test="null != password and '' != password">
+				`PASSWORD` = #{password},
+			</if>
+			<if test="null != email and '' != email">
+				`EMAIL` = #{email},
+			</if>
+			<if test="null != isOnjob">
+				`IS_ONJOB` = #{isOnjob},
+			</if>
+			<if test="null != isLock">
+				`IS_LOCK` = #{isLock},
+			</if>
+			<if test="null != creator and '' != creator">
+				`CREATOR` = #{creator},
+			</if>
+			<if test="null != lastLoginIp and '' != lastLoginIp">
+				`LAST_LOGIN_IP` = #{lastLoginIp},
+			</if>
+			<if test="null != roleId and '' != roleId">
+				`ROLE_ID` = #{roleId},
+			</if>
+			<if test="null != nickname and '' != nickname">
+				`NICKNAME` = #{nickname},
+			</if>
+			<if test="null != modifier and '' != modifier">
+				`MODIFIER` = #{modifier},
+			</if>
+		</set>
+        where ID = #{id}
+	</update>
+	
+	<!-- 根据编号删除账号管理 -->
+	<delete id="doDelManager" parameterType="int">
+		delete from `manager` where ID = #{_parameter}
+	</delete>
+</mapper>
