@@ -39,7 +39,7 @@
                 </exclusion>
 
                 <!-- 排除Springboot 内嵌Tomcat。自己通过打包发布到Tomcat上-->
-              <!--  <exclusion>
+               <!-- <exclusion>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-starter-tomcat</artifactId>
                 </exclusion>-->
