@@ -19,7 +19,7 @@ import java.util.List;
  *
  * @date 2014-07-31
  */
-@Service("resourceActionService")
+@Service
 public class ResourceActionServiceImpl implements IResourceActionService {
 
 	@Resource

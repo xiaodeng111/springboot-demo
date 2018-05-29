@@ -20,7 +20,7 @@ import java.util.List;
  *
  * @date 2014-07-29
  */
-@Service("resourcesService")
+@Service
 public class ResourcesServiceImpl implements IResourcesService {
 
 	@Resource

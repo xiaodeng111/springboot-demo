@@ -19,7 +19,7 @@ import java.util.List;
  *
  * @date 2014-08-04
  */
-@Service("rolesService")
+@Service
 public class RolesServiceImpl implements IRolesService {
 
 	@Resource

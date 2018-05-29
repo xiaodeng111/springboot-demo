@@ -19,7 +19,7 @@ import javax.annotation.Resource;
  *
  * @date 2017-02-27
  */
-@Service("managerService")
+@Service
 public class ManagerServiceImpl implements IManagerService {
 
 	@Resource

@@ -15,22 +15,18 @@ import javax.annotation.Resource;
  *
  * @date 2017-02-28
  */
-@Service("managerInfoService")
+@Service
 public class ManagerInfoServiceImpl implements IManagerInfoService {
 
 	@Resource
 	private IManagerInfoDao managerInfoDao;
 
-	/* (non-Javadoc)
-	 * @see com.demo.uc.service.IManagerInfoService#addSave(com.demo.uc.model.ManagerInfo)
-	 */
+
 	public int doSave(ManagerInfoBo managerInfo) {
 		return managerInfoDao.doSave(managerInfo);
 	}
 		
-	/* (non-Javadoc)
-	 * @see com.demo.uc.service.IManagerInfoService#editSave(com.demo.uc.model.ManagerInfo)
-	 */
+
 	public int doEdit(ManagerInfoBo managerInfo) {
 		return managerInfoDao.doEdit(managerInfo);
 	}

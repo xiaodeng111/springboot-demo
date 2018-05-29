@@ -38,7 +38,7 @@ public class WebInitListener implements ServletContextListener {
 		
 		springContext = WebApplicationContextUtils.getWebApplicationContext(sce
 				.getServletContext());
-		IResourcesService resourcesService = (IResourcesService) springContext.getBean("resourcesService");
+		IResourcesService resourcesService = (IResourcesService) springContext.getBean(IResourcesService.class);
 		// 初始化所有资源（菜单目录）
 		List<ResourcesBo> resList = resourcesService.selectAll();
 		for (ResourcesBo res : resList) {
@@ -52,7 +52,7 @@ public class WebInitListener implements ServletContextListener {
 			Constants.getResourceMap().put(res.getNameEn(), res);
 		}
 		// 初始化所有菜单操作权限
-		IResourceActionService resourceActionService = (IResourceActionService) springContext.getBean("resourceActionService");
+		IResourceActionService resourceActionService = (IResourceActionService) springContext.getBean(IResourceActionService.class);
 		List<ResourceActionBo> raList = resourceActionService.selectAll();
 		for (ResourceActionBo ra : raList)
 			Constants.getResourceActionMap().put(ra.getNameEn(), ra);

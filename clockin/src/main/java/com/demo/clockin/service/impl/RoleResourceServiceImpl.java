@@ -15,7 +15,7 @@ import java.util.List;
  *
  * @date 2014-08-04
  */
-@Service("roleResourceService")
+@Service
 public class RoleResourceServiceImpl implements IRoleResourceService {
 
 	@Resource
