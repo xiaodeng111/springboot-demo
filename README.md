@@ -34,13 +34,14 @@ SpringBoot+Mybatis+JSP+c3p0+springmvc+spring+dtgrid
 </ul>
 <h4>前端所有文件在webapp文件夹下</h4>
 <ul>
-<li>jsp: 通用的jsp</li>
 <li>rsource: 常用的插件</li>
 <li>js　项目所需js 存放处</li>
 <li>WEB-INF 项目前端页面JSP及web.xml</li>
 </ul>
 </article>
 </br>
+项目启动方式可以使用springboot内嵌的tomcat，直接调用com.demo.clockin下的ClockinApplication即可</br>
+另一种方式就是直接打包放入Tomcat下即可
 </br>
 建议使用谷歌浏览器访问,部署时请修改application-dev.yml里的数据库连接以及你服务服务链接的ip（192.168.2.253）
 </br>
