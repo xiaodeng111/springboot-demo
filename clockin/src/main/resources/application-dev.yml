@@ -2,6 +2,8 @@ server:
   port: 6080
   tomcat:
     uri-encoding: UTF-8
+  servlet:
+    path: /
 
 spring:
   datasource:
@@ -35,7 +37,7 @@ system:
   base: http://192.168.2.253:6080
   charset: UTF-8
   compName: XXXX有限公司
-  name: 后台管理系统
+  name: 资源管理系统
   fileUploadRootPath: D:/lee_work/puxinwork/pringboot/clockin/target/clockin
   fileUploadRootUrl: http://192.168.2.253:6080/clockin/
   fileImageMaxSize: 5
