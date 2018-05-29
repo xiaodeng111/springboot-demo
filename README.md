@@ -41,9 +41,6 @@ SpringBoot+Mybatis+JSP+c3p0+springmvc+spring+dtgrid
 </ul>
 </article>
 </br>
-<h2>
-注：本文采用的是非springboot内嵌的tomcat来启动服务。需要自己打包放到Tomcat里启动
-</h2>
 </br>
 建议使用谷歌浏览器访问,部署时请修改application-dev.yml里的数据库连接以及你服务服务链接的ip（192.168.2.253）
 </br>
