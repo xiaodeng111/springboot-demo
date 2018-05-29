@@ -33,14 +33,8 @@
         <div class="layout">
             <!--logo部分-->
             <div class="logo">
-                <%--<a href="#">
-                    <img src="${base }/resources/assets/images/logo.png" alt="测试教育">
-                </a>
-                <div class="title">
-                    <img src="${base }/resources/assets/images/title.png" alt="测试系统管理平台">
-                </div>--%>
                     <div>
-                        <p class="logo-title">后台管理系统</p>
+                        <p class="logo-title">资源管理系统</p>
                     </div>
             </div>
             <!--表单部分-->

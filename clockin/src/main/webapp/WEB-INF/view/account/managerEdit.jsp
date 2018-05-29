@@ -96,7 +96,7 @@
 					</div>
 					<div class="form-group nickname" <c:if test="${sessionScope.manager.editNicknameCode != 0}">style="margin: 0;"</c:if>>
 						<label for="name">昵称：</label>
-						<input type="text" id="nickname" name="nickname" style="height:40px;" <c:if test="${sessionScope.manager.editNicknameCode == 0}">style="background-color: #d9e0e0;"</c:if> maxlength="59"  placeholder="将显示在测试师生APP上" value="${sessionScope.manager.nickname}" <c:if test="${sessionScope.manager.editNicknameCode == 0}"> readonly</c:if>>
+						<input type="text" id="nickname" name="nickname" style="height:40px;" <c:if test="${sessionScope.manager.editNicknameCode == 0}">style="background-color: #d9e0e0;"</c:if> maxlength="59"  placeholder="将显示在APP上" value="${sessionScope.manager.nickname}" <c:if test="${sessionScope.manager.editNicknameCode == 0}"> readonly</c:if>>
 					</div>
 					<c:if test="${sessionScope.manager.editNicknameCode != 0}">
 						<div class="form-group" id="mark" style="margin-bottom: 20px;">
