@@ -40,3 +40,7 @@ SpringBoot+Mybatis+JSP+c3p0+springmvc+spring+dtgrid
 <li>WEB-INF 项目前端页面JSP及web.xml</li>
 </ul>
 </article>
+</br>
+<h2>
+注：本文采用的是非springboot内嵌的tomcat来启动服务。需要自己打包放到Tomcat里启动
+</h2>
