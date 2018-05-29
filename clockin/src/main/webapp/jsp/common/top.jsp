@@ -12,7 +12,7 @@
 <div class="row nav-header">
     <!--logo-->
     <a class="nav-brand" href="${base}/gotoMain">
-        <img src="${base }/resources/assets/images/logo.png">
+        <img src="${base }/resources/assets/images/favicon.ico">
     </a>
     <a class="navbar-brand-desc hidden-xs" href="${base}/gotoMain.${actionExt}"><%=Property.SYSTEM_NAME %></a>
     <!--按钮-->

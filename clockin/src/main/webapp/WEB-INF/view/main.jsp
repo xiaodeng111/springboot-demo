@@ -31,7 +31,7 @@
 			<div class="container-fluid">
 				<!-- begin mobile sidebar expand / collapse button -->
 				<div class="navbar-header">
-					<a href="${base}/login" class="navbar-brand" style="width: 300px;font-size: 30px;font-weight:  bold;"><%--<span><img src="${base }/resources/assets/images/icon.png"></span>&nbsp;&nbsp;--%>${systemName }</a>
+					<a href="${base}/login" class="navbar-brand" style="width: 300px;font-size: 30px;font-weight:  bold;">${systemName }</a>
 					<button type="button" class="navbar-toggle" data-click="sidebar-toggled">
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
